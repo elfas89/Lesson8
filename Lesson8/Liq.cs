@@ -43,8 +43,24 @@ namespace Lesson8
 
             foreach (string i in elements) {
                 Console.WriteLine(i);
+            }
+        }
+
+        public static Liq[] operator / (Liq l1, int x)
+        {
+            double volume = l1.volume / x;
+
+            Liq[] liqs = new Liq[x];
+
+
+            for (int i = 0; i < liqs.Length; i++)
+            {
+                liqs[i] = new Liq(volume, l1.elements);
 
             }
+
+            return liqs;
+
         }
 
     }
